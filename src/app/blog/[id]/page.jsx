@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = async ({ params }) => {
+const BlogsDetails = async ({ params }) => {
     const { id } = params;
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     const data = await res.json()
@@ -13,4 +13,4 @@ const page = async ({ params }) => {
     );
 };
 
-export default page;
+export default BlogsDetails;
