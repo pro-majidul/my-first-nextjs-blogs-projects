@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const Home = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -7,7 +8,9 @@ const Home = async () => {
       <h3 className="text-center text-xl">Here is the All Blogs Title</h3>
       <ul className="px-12 py-12">
         {
-          blogs.map(blog => <li className="text-xl hover:underline py-2 hover:text-blue-300" key={blog.id}>{blog.title}</li>)
+          blogs.map(blog => <li className="text-xl hover:underline py-2 hover:text-blue-300" key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+          </li>)
         }
       </ul>
     </div>
